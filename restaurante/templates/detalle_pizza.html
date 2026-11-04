@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block title %}{{ pizza.titulo }} - Mamma Mia{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/detalle_pizza.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="imagen_texto" id="detalle_pizza">
+
+        {% if pizza.foto %}
+            <img src="{% static pizza.foto %}" alt="Pizza {{ pizza.titulo }}">
+        {% endif %}
+
+        <article>
+            <h1>{{ pizza.titulo }}</h1>
+            <p class="precio">{{ pizza.precio }} €</p>
+            <p>{{ pizza.descripcion }}</p>
+
+            <h3>Tipo de masa</h3>
+            <p>{{ pizza.tipo.titulo }}</p>
+
+            <h3>Ingredientes</h3>
+            <ul class="ingredientes">
+            {% for ingrediente in ingredientes %}
+                <li>{{ ingrediente }}</li>
+            {% endfor %}
+            </ul>
+
+            {% comment %}
+            Cuando existan las páginas de detalle de masa y de ingrediente, se pueden enlazar así:
+            <p><a href="{% url 'detalle_masa' pizza.tipo.id %}">{{ pizza.tipo.titulo }}</a></p>
+            <li><a href="{% url 'detalle_ingrediente' ingrediente %}">{{ ingrediente }}</a></li>
+            {% endcomment %}
+        </article>
+
+    </div>
+{% endblock %}
