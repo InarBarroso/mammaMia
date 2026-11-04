@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Mamma Mia{% endblock %}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        {% block extra_css %}{% endblock %}
+    </head>
+
+    <body>
+        <header>
+            <div id="titulo">
+                <a href="#" id="titulo_header">Mamma Mia</a>
+            </div>
+            <nav>
+                <a href="#">Inicio</a>
+                <a href="#">Pizzas</a>
+                <a href="#">Masas</a>
+            </nav>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <div id="contacto">
+                <h2>Datos de contacto</h2>
+                <p>Teléfono: +34 600 000 000</p>
+                <p>Email: contacto@mammamia.es</p>
+                <p>Web: www.mammamia.es</p>
+            </div>
+            <div id="localizacion">
+                <h2>Encuéntranos</h2>
+                <p>Dirección: Calle Ejemplo, 1, Bilbao</p>
+            </div>
+        </footer>
+    </body>
+</html>
