@@ -10,11 +10,12 @@ def index(request):
 
 def home(request):
     return render(request, "cover.html")
+    pizzas = pizza.objects.all() # aqui solo cogeremos las 3 mas vendidas
     context = {
         'pizzas' : pizzas
     }
 
-def filtrarpizza(request, idPizza):
-    //implementar la vista para filtrar pizza por id
+def filtrarpizza(request, idPizza, name="filtrarpizza"):
+    #implementar la vista para filtrar pizza por id
 
 
