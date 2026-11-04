@@ -1,20 +1,9 @@
-
-
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <title>Sushi Dragon</title>
-        <link rel="stylesheet" href="main.css">
-        <link rel="shortcut icon" href="logo.svg" >
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    </head>
-
-    <body>
-       
-
+{%extends "index.html"%}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock %}
+ 
+{%block content%}
         <main>
             <div id="portada" class="grid">
                 <div id="portada1">
@@ -43,7 +32,7 @@
                     <section>
                         <img src="{{pizza.imagen.url}}" alt="imagen">
                         <div>
-                        <h3>{{pizza.nombre}}</h3>
+                        <h3>{{pizza.titulo}}</h3>
                         <h3>{{pizza.descripcion}}</h3>
                         <a href="{% url 'filtrarpizza' pizza.id %}" id="boton">Detalles</a>
                         </div>
@@ -75,9 +64,4 @@
 
         
         </main>
-
-
-    </body>
-
-
-</html>
+{%endblock%}
