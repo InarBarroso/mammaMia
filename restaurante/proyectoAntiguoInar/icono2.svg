@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Arco 1: Inspiración Japonesa -->
+  <path d="M32 10C20 10 10 20 10 32C10 40 14 47 22 51C28 54 35 52 40 47" stroke-width="2.5"/>
+  <!-- Arco 2: Sabores Vascos -->
+  <path d="M32 54C44 54 54 44 54 32C54 24 50 17 42 13C36 10 29 12 24 17" stroke-width="2.5"/>
+  <!-- Núcleo de integración -->
+  <circle cx="32" cy="32" r="5" fill="#1A1A1A"/>
+</svg>

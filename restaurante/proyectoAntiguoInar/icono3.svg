@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Base del plato -->
+  <line x1="12" y1="48" x2="52" y2="48" stroke-width="2.5"/>
+  <!-- Cúpula gastronómica -->
+  <path d="M16 48C16 34 23 26 32 26C41 26 48 34 48 48" stroke-width="2"/>
+  <!-- Chispa / Estrella de creatividad y sabor -->
+  <path d="M32 8L34 16L42 18L34 20L32 28L30 20L22 18L30 16Z" fill="#1A1A1A" stroke="none"/>
+  <path d="M18 14L20 17" stroke-width="1.5"/>
+  <path d="M46 14L44 17" stroke-width="1.5"/>
+</svg>

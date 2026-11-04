@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Borde exterior de sello punteado -->
+  <circle cx="32" cy="32" r="26" stroke-dasharray="4 3" opacity="0.4"/>
+  <!-- Círculo de calidad -->
+  <circle cx="32" cy="32" r="21" stroke-width="1.5"/>
+  <!-- Hoja orgánica de frescura -->
+  <path d="M32 16C22 22 21 34 28 41C31 44 37 44 41 39C45 33 41 22 32 16Z" stroke-width="2"/>
+  <path d="M26 38C30 33 34 27 38 21" stroke-width="1.5"/>
+</svg>

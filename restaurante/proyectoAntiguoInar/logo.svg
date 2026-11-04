@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Círculo de fondo -->
+  <circle cx="32" cy="32" r="32" fill="#1A2826"/>
+
+  <!-- Ilustración de escama/dragón en líneas finas -->
+  <g fill="none" stroke="#F8F7F4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 32 10 C 46 20 49 38 32 54 C 15 38 18 20 32 10 Z" stroke-width="2.2"/>
+    <path d="M 32 22 C 38 27 36 36 30 34 C 26 32 28 26 32 28" stroke-width="1.8"/>
+    <path d="M 19 24 C 12 33 16 45 32 54" stroke-width="1.5"/>
+    <path d="M 45 24 C 52 33 48 45 32 54" stroke-width="1.5"/>
+  </g>
+
+  <!-- Detalle carmín -->
+  <circle cx="32" cy="44" r="2.5" fill="#B82E2E"/>
+</svg>
