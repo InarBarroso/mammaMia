@@ -16,59 +16,9 @@ body h3{
     font-size: 150%;
 }
 
-
-header{
-    margin: 0;
-    padding: 1.2rem 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    background-color: #1A2826;
-    color: #F0F2F1;
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
-    flex-wrap: wrap;
-}
-
-
-nav{
-    width: 50%;
-    display: flex;
-    gap: 2.2rem;
-    align-items: center;
-    text-align: right;
-    flex-wrap: wrap;
-    white-space: nowrap;
-}
-nav a{
-    color: #B82E2E;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    padding-bottom: 4px;
-}
-nav a:hover{
-    color: #e82f2f;
-    transform: scale(1.08);
-}
-
 body{
     margin: 0;
 }
-
- #titulo_header{
-    font-family: "Cherry Cream Soda", cursive;
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 2.5rem;
-}
-
 *{
     font-family: "Montserrat";
 }
@@ -170,21 +120,6 @@ body{
 }
 @media only screen and (max-width:700px){
 
-
-header {
-        justify-content: center; 
-        padding: 0.8rem 1rem;
-    }
-
-nav {
-        justify-content: center;
-        gap: 0.8rem 1.2rem;
-    }
-
-nav a {
-        font-size: 0.85rem; 
-    }
-
 #portada {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
@@ -264,15 +199,6 @@ nav a {
     padding-top: 1%;
     padding-bottom: 1%;
 }
-
-footer{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
 }
 
 #masVendidas p{
@@ -304,17 +230,6 @@ section p{
     padding-top: 2%;
 }
 
-footer{
-    background-color: #1A2826;;
-    display: flex;
-    justify-content: space-around;
-    color: #F0F2F1;
-    padding-bottom: 5%;  
-}
-footer p{
-    font-size: 100%;
-}
-
 #boton_reserva, #boton{ 
     align-self: center;
     background-color: #B82E2E;
@@ -337,8 +252,4 @@ footer p{
 #boton_reserva:hover {
     background-color: #962323;
     transform: scale(1.08);
-}
-
-footer h2{
-    font-size: 2em;
 }
