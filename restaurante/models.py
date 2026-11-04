@@ -1,3 +1,19 @@
 from django.db import models
 
-# Create your models here.
+class TipoMasa(models.Model):
+    titulo = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    foto = models.CharField(max_length=255)
+
+
+class Pizza(models.Model):
+    titulo = models.CharField(max_length=100)
+    foto = models.CharField(max_length=255)
+    precio = models.DecimalField(max_digits=6, decimal_places=2)
+    descripcion = models.TextField()
+    tipo = models.ForeignKey(
+        TipoMasa,
+        on_delete=models.PROTECT,  # Si queremos borrar una masa, no debe existir ninguna pizza con esa masa asociada.
+    )
+    ingredientes = models.TextField()
+    num_ventas = models.IntegerField(default=0)
