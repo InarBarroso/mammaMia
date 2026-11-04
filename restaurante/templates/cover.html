@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Sushi Dragon</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="shortcut icon" href="logo.svg" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+       
+
+        <main>
+            <div id="portada" class="grid">
+                <div id="portada1">
+                <h1>Mamma Mia</h1>
+                </div>
+                <div id="portada2">
+                <h2>Italia se encuentra con Euskadi</h2>
+                <p>La precisión y tradición de la cocina italiana se fusionan con la fuerza, el producto y los sabores de la gastronomía vasca.</p>
+                </div>
+            </div>
+            <div class="imagen_texto" id="about">
+                <article>
+                <h2>Nuestros Origenes</h2>
+                <p>En Mamma Mia unimos la esencia de la cocina japonesa con la identidad gastronómica vasca.</p>
+                <p>Elaboramos sushi y platos de fusión combinando técnicas japonesas, producto local y sabores que forman parte de nuestra cultura. Una propuesta diferente, cuidada y llena de personalidad.</p>
+                </article>
+                <img src="restaurante.avif" alt="restaurante">
+            </div>
+            <div id="top3_pizzas">
+                <div id="tit_top3">
+                    <h2>Las más vendidas</h2>
+                </div>
+                <div id="masVendidas">
+
+                    {%for pizza in pizzas%}
+                    <section>
+                        <img src="{{pizza.imagen.url}}" alt="imagen">
+                        <div>
+                        <h3>{{pizza.nombre}}</h3>
+                        <h3>{{pizza.descripcion}}</h3>
+                        <a href="{% url 'filtrarpizza' pizza.id %}" id="boton">Detalles</a>
+                        </div>
+                    </section>
+                    {%endfor%}
+                    
+                </div>
+            </div>
+
+            <div class="imagen_texto" id="reservas">
+
+                <img src="restaurante2.avif" alt="restaurante2">
+
+                <article>
+                <h2>Ven a descubrir nuestra cocina</h2>
+                <p>Una mesa, dos culturas y muchas formas de disfrutar. Descubre nuestra propuesta y déjate sorprender por el sabor de Sushi Dragon. Ven si deseas:</p>
+                <ul>
+                    <li><p>Disfrutar</p></li>
+                    <li><p>Comer bien</p></li>
+                    <li><p>Buen producto</p></li>
+                </ul>
+                <p>Reserva tu mesa</p>
+                <a href="reservas.html" id="boton_reserva">Reserva</a>
+
+                </article>
+
+            </div>
+            
+
+        
+        </main>
+
+
+    </body>
+
+
+</html>
