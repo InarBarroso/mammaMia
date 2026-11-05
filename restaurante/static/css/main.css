@@ -34,7 +34,7 @@ body{
     grid-template-rows: 1fr 1fr;
 
 
-    background-image: url('dragon.jpg');
+    background-image: url('../img/toscana.jpg');
     background-repeat: no-repeat;  
     background-size: cover;  
 
@@ -100,12 +100,12 @@ body{
     justify-content: center;
 }
 
-#tit_bloque_pizzas, #tit_all_pizzas{
+#tit_bloque_pizzas{
     display: flex;
     justify-content: center; 
 
 }
-#masVendidas{
+#vista_pizzas{
     margin-top: 1%;
     padding-top: 1%;
 
@@ -173,7 +173,7 @@ body{
     flex-direction: column;
     justify-content: center;
 }
-#tit_bloque_pizzas, #tit_all_pizzas{
+#tit_bloque_pizzas{
     display: flex;
     justify-content: center; 
     align-content: center;
@@ -181,7 +181,7 @@ body{
    
 
 }
-#masVendidas{
+#vista_pizzas{
     margin-top: 1%;
     padding-top: 1%;
 
@@ -201,7 +201,7 @@ body{
 }
 }
 
-#masVendidas p{
+#vista_pizzas p{
     font-size: 1.1em;
 }
 
@@ -223,9 +223,8 @@ section p{
 
 
 
-#bloque_pizzas, #all_pizzas{
+#bloque_pizzas{
     background-color: #F8F7F4;
-  
     padding-bottom: 5%;
     padding-top: 2%;
 }
@@ -252,4 +251,4 @@ section p{
 #boton_reserva:hover {
     background-color: #962323;
     transform: scale(1.08);
-}g
+}
