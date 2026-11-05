@@ -10,11 +10,11 @@ def index(request):
 
 
 def home(request):
-    return render(request, "cover.html")
-    pizzas = Pizza.objects.all() 
+    pizzas = Pizza.objects.order_by('-num_ventas')[:3]
     context = {
         'pizzas' : pizzas
     }
+    return render(request, "cover.html", context)
 
 def filtrarpizza(request, idPizza):
     # detalle de una pizza --> /pizza/<idPizza>
@@ -23,10 +23,10 @@ def filtrarpizza(request, idPizza):
 
     # los ingredientes se guardan como texto: "Tomate, Mozzarella, Albahaca"
     # lo separamos por las comas para poder mostrarlos como lista en el template
-    ingredientes = [i.strip() for i in Pizza.ingredientes.split(',') if i.strip()]
+    ingredientes = [i.strip() for i in pizza.ingredientes.split(',') if i.strip()]
 
     contexto = {
-        'pizza': Pizza,
+        'pizza': pizza,
         'ingredientes': ingredientes,
     }
     return render(request, 'detalle_pizza.html', contexto)

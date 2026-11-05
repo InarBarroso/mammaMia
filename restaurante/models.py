@@ -5,6 +5,8 @@ class TipoMasa(models.Model):
     descripcion = models.TextField()
     foto = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.titulo
 
 class Pizza(models.Model):
     titulo = models.CharField(max_length=100)
@@ -17,3 +19,6 @@ class Pizza(models.Model):
     )
     ingredientes = models.TextField()
     num_ventas = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.titulo

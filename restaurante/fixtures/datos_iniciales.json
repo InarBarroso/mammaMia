@@ -1,0 +1,68 @@
+[
+  {
+    "model": "restaurante.tipomasa",
+    "pk": 1,
+    "fields": {
+      "titulo": "Napolitana",
+      "descripcion": "Masa de fermentación lenta (48 horas), con bordes altos y esponjosos y un centro fino y tierno.",
+      "foto": "img/masa_napolitana.jpg"
+    }
+  },
+  {
+    "model": "restaurante.tipomasa",
+    "pk": 2,
+    "fields": {
+      "titulo": "Romana",
+      "descripcion": "Masa fina y crujiente, estirada con rodillo y con un toque de aceite de oliva.",
+      "foto": "img/masa_romana.jpg"
+    }
+  },
+  {
+    "model": "restaurante.tipomasa",
+    "pk": 3,
+    "fields": {
+      "titulo": "Integral",
+      "descripcion": "Elaborada con harina de trigo integral, de sabor más intenso y con más fibra.",
+      "foto": "img/masa_integral.jpg"
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 1,
+    "fields": {
+      "titulo": "Margarita",
+      "foto": "img/pizza_margarita.jpg",
+      "precio": "9.50",
+      "descripcion": "La clásica de Nápoles: sencilla, con el tomate y la albahaca como protagonistas.",
+      "tipo": 1,
+      "ingredientes": "Tomate, Mozzarella fior di latte, Albahaca fresca, Aceite de oliva virgen extra",
+      "num_ventas": 120
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 2,
+    "fields": {
+      "titulo": "Diavola",
+      "foto": "img/pizza_diavola.jpg",
+      "precio": "11.00",
+      "descripcion": "Para los que buscan un punto picante sobre una base fina y crujiente.",
+      "tipo": 2,
+      "ingredientes": "Tomate, Mozzarella, Salami picante, Guindilla",
+      "num_ventas": 85
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 3,
+    "fields": {
+      "titulo": "Vegetal",
+      "foto": "img/pizza_vegetal.jpg",
+      "precio": "10.50",
+      "descripcion": "Verduras de temporada asadas sobre nuestra masa integral.",
+      "tipo": 3,
+      "ingredientes": "Tomate, Mozzarella, Calabacín, Berenjena, Pimiento rojo, Cebolla morada",
+      "num_ventas": 40
+    }
+  }
+]

@@ -1,4 +1,5 @@
 {%extends "index.html"%}
+{% load static %}
 
 {% block title %}Inicio{% endblock %}
 
@@ -33,7 +34,7 @@
 
                     {%for pizza in pizzas%}
                     <section>
-                        <img src="{{pizza.imagen.url}}" alt="imagen">
+                        <img src="{% static pizza.foto %}" alt="Pizza {{ pizza.titulo }}">
                         <div>
                         <h3>{{pizza.titulo}}</h3>
                         <h3>{{pizza.descripcion}}</h3>
