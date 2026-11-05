@@ -31,4 +31,11 @@ def filtrarpizza(request, idPizza):
     }
     return render(request, 'detalle_pizza.html', contexto)
 
+def allpizzas(request):
+    pizzas = Pizza.objects.all()
+    context = {
+        'pizzas': pizzas
+    }
+    return render(request, "allPizza.html", context)
+
 
