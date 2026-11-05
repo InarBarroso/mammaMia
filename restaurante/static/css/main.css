@@ -100,12 +100,12 @@ body{
     justify-content: center;
 }
 
-#tit_top3, #tit_all_pizzas{
+#tit_bloque_pizzas, #tit_all_pizzas{
     display: flex;
     justify-content: center; 
 
 }
-#tecnicas{
+#masVendidas{
     margin-top: 1%;
     padding-top: 1%;
 
@@ -173,7 +173,7 @@ body{
     flex-direction: column;
     justify-content: center;
 }
-#tit_tecnicas{
+#tit_bloque_pizzas, #tit_all_pizzas{
     display: flex;
     justify-content: center; 
     align-content: center;
@@ -181,7 +181,7 @@ body{
    
 
 }
-#tecnicas{
+#masVendidas{
     margin-top: 1%;
     padding-top: 1%;
 
@@ -193,7 +193,7 @@ body{
     justify-content: space-evenly;
     gap: 40px;  
 }
-#bloque_tecnicas{
+#bloque_pizzas{
     margin-top: 2%;
     margin-bottom: 2%;
     padding-top: 1%;
@@ -223,7 +223,7 @@ section p{
 
 
 
-#top3_pizzas, #all_pizzas{
+#bloque_pizzas, #all_pizzas{
     background-color: #F8F7F4;
   
     padding-bottom: 5%;
@@ -252,4 +252,4 @@ section p{
 #boton_reserva:hover {
     background-color: #962323;
     transform: scale(1.08);
-}
+}g
