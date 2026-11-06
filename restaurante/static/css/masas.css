@@ -1,0 +1,33 @@
+/* estilos de las páginas de masas (lista y detalle)
+   las tarjetas usan las mismas clases que la página de pizzas (main.css) */
+
+/* que las fotos no se salgan de las tarjetas */
+section img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+section {
+    max-width: 380px;
+}
+
+#detalle_masa {
+    background-color: #F8F7F4;
+}
+
+#detalle_masa h1 {
+    font-family: "Cherry Cream Soda", cursive;
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.precio {
+    color: #B82E2E;
+    font-weight: 700;
+}
+
+.sin_pizzas {
+    text-align: center;
+}

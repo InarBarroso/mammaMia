@@ -16,6 +16,11 @@
     color: #1A2826;
 }
 
+#detalle_pizza article a {
+    color: #B82E2E;
+    font-weight: 600;
+}
+
 #detalle_pizza .precio {
     color: #B82E2E;
     font-size: 2rem;

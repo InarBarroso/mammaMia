@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Pizza
+from .models import Pizza, TipoMasa
 
 # Create your views here.
 
@@ -37,5 +37,22 @@ def allpizzas(request):
         'pizzas': pizzas
     }
     return render(request, "allPizza.html", context)
+
+def allmasas(request):
+    masas = TipoMasa.objects.all()
+    context = {
+        'masas': masas
+    }
+    return render(request, "allMasas.html", context)
+
+def filtrarmasa(request, idMasa):
+    masa = get_object_or_404(TipoMasa, pk=idMasa)
+    # pizzas que tienen esta masa
+    pizzas = Pizza.objects.filter(tipo=masa)
+    context = {
+        'masa': masa,
+        'pizzas': pizzas
+    }
+    return render(request, "detalle_masa.html", context)
 
 

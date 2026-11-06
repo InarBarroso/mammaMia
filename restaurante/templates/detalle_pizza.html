@@ -4,6 +4,7 @@
 {% block title %}{{ pizza.titulo }} - Mamma Mia{% endblock %}
 
 {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/detalle_pizza.css' %}">
 {% endblock %}
 
@@ -20,7 +21,7 @@
             <p>{{ pizza.descripcion }}</p>
 
             <h3>Tipo de masa</h3>
-            <p>{{ pizza.tipo.titulo }}</p>
+            <p><a href="{% url 'filtrarmasa' pizza.tipo.id %}">{{ pizza.tipo.titulo }}</a></p>
 
             <h3>Ingredientes</h3>
             <ul class="ingredientes">
@@ -28,12 +29,6 @@
                 <li>{{ ingrediente }}</li>
             {% endfor %}
             </ul>
-
-            {% comment %}
-            Cuando existan las páginas de detalle de masa y de ingrediente, se pueden enlazar así:
-            <p><a href="{% url 'detalle_masa' pizza.tipo.id %}">{{ pizza.tipo.titulo }}</a></p>
-            <li><a href="{% url 'detalle_ingrediente' ingrediente %}">{{ ingrediente }}</a></li>
-            {% endcomment %}
         </article>
 
     </div>
