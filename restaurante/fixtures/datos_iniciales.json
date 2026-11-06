@@ -5,7 +5,7 @@
     "fields": {
       "titulo": "Napolitana",
       "descripcion": "Masa de fermentación lenta (48 horas), con bordes altos y esponjosos y un centro fino y tierno.",
-      "foto": "img/masa_napolitana.jpg"
+      "foto": "img/masas/napolitana.jpg"
     }
   },
   {
@@ -14,7 +14,7 @@
     "fields": {
       "titulo": "Romana",
       "descripcion": "Masa fina y crujiente, estirada con rodillo y con un toque de aceite de oliva.",
-      "foto": "img/masa_romana.jpg"
+      "foto": "img/masas/romana.jpg"
     }
   },
   {
@@ -23,7 +23,7 @@
     "fields": {
       "titulo": "Integral",
       "descripcion": "Elaborada con harina de trigo integral, de sabor más intenso y con más fibra.",
-      "foto": "img/masa_integral.jpg"
+      "foto": "img/masas/integral.jpg"
     }
   },
   {
@@ -31,11 +31,11 @@
     "pk": 1,
     "fields": {
       "titulo": "Margarita",
-      "foto": "img/pizza_margarita.jpg",
+      "foto": "img/pizzas/margarita.jpg",
       "precio": "9.50",
       "descripcion": "La clásica de Nápoles: sencilla, con el tomate y la albahaca como protagonistas.",
       "tipo": 1,
-      "ingredientes": "Tomate, Mozzarella fior di latte, Albahaca fresca, Aceite de oliva virgen extra",
+      "ingredientes": "Tomate, Mozzarella fior di latte, Tomate en rodajas, Albahaca fresca, Aceite de oliva virgen extra",
       "num_ventas": 120
     }
   },
@@ -44,11 +44,11 @@
     "pk": 2,
     "fields": {
       "titulo": "Diavola",
-      "foto": "img/pizza_diavola.jpg",
+      "foto": "img/pizzas/diavola.jpg",
       "precio": "11.00",
-      "descripcion": "Para los que buscan un punto picante sobre una base fina y crujiente.",
+      "descripcion": "Para los que buscan un punto picante.",
       "tipo": 2,
-      "ingredientes": "Tomate, Mozzarella, Salami picante, Guindilla",
+      "ingredientes": "Tomate, Mozzarella, Salami picante, Albahaca fresca, Guindilla",
       "num_ventas": 85
     }
   },
@@ -57,12 +57,168 @@
     "pk": 3,
     "fields": {
       "titulo": "Vegetal",
-      "foto": "img/pizza_vegetal.jpg",
+      "foto": "img/pizzas/vegetal.jpg",
       "precio": "10.50",
       "descripcion": "Verduras de temporada asadas sobre nuestra masa integral.",
       "tipo": 3,
-      "ingredientes": "Tomate, Mozzarella, Calabacín, Berenjena, Pimiento rojo, Cebolla morada",
+      "ingredientes": "Tomate, Mozzarella, Calabacín, Berenjena, Pimiento rojo, Champiñones, Cebollitas",
       "num_ventas": 40
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 4,
+    "fields": {
+      "titulo": "Marinara",
+      "foto": "img/pizzas/marinara.jpg",
+      "precio": "8.00",
+      "descripcion": "Una de las pizzas más antiguas de Nápoles: sin queso, solo tomate, ajo y orégano.",
+      "tipo": 1,
+      "ingredientes": "Tomate, Ajo, Orégano, Aceite de oliva virgen extra",
+      "num_ventas": 20
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 5,
+    "fields": {
+      "titulo": "Cuatro Quesos",
+      "foto": "img/pizzas/cuatro_quesos.jpg",
+      "precio": "11.50",
+      "descripcion": "La clásica de cuatro quesos, con un invitado vasco: el queso Idiazabal.",
+      "tipo": 1,
+      "ingredientes": "Mozzarella, Gorgonzola, Parmesano, Queso Idiazabal, Orégano",
+      "num_ventas": 110
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 6,
+    "fields": {
+      "titulo": "Capricciosa",
+      "foto": "img/pizzas/capricciosa.jpg",
+      "precio": "11.00",
+      "descripcion": "La «caprichosa»: para quien no se decide y lo quiere todo en la misma pizza.",
+      "tipo": 1,
+      "ingredientes": "Tomate, Mozzarella, Jamón cocido, Champiñones, Alcachofas, Aceitunas negras",
+      "num_ventas": 60
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 7,
+    "fields": {
+      "titulo": "Txistorra",
+      "foto": "img/pizzas/txistorra.jpg",
+      "precio": "11.50",
+      "descripcion": "Nuestro guiño a la barra de pintxos vasca.",
+      "tipo": 1,
+      "ingredientes": "Tomate, Mozzarella, Txistorra",
+      "num_ventas": 70
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 8,
+    "fields": {
+      "titulo": "Carbonara",
+      "foto": "img/pizzas/carbonara.jpg",
+      "precio": "12.00",
+      "descripcion": "La carbonara de pizzería: base blanca de nata, sin tomate, con bacon y champiñones.",
+      "tipo": 2,
+      "ingredientes": "Nata, Mozzarella, Bacon, Champiñones, Parmesano, Pimienta negra",
+      "num_ventas": 95
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 9,
+    "fields": {
+      "titulo": "Prosciutto e Rucola",
+      "foto": "img/pizzas/prosciutto_e_rucola.jpg",
+      "precio": "12.50",
+      "descripcion": "El prosciutto y la rúcula se añaden al salir del horno para que lleguen frescos a la mesa.",
+      "tipo": 2,
+      "ingredientes": "Tomate, Mozzarella, Prosciutto crudo, Rúcula, Parmesano en lascas",
+      "num_ventas": 55
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 10,
+    "fields": {
+      "titulo": "Bilbaína",
+      "foto": "img/pizzas/bilbaina.jpg",
+      "precio": "13.00",
+      "descripcion": "La especialidad de la casa: mortadela, burrata y pistacho sobre una base de pesto.",
+      "tipo": 2,
+      "ingredientes": "Pesto de albahaca, Mozzarella, Mortadela, Burrata, Pistachos troceados, Crema de balsámico",
+      "num_ventas": 50
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 11,
+    "fields": {
+      "titulo": "Siciliana",
+      "foto": "img/pizzas/siciliana.jpg",
+      "precio": "11.00",
+      "descripcion": "Rectangular y horneada en bandeja, con champiñones bajo una buena capa de queso.",
+      "tipo": 2,
+      "ingredientes": "Tomate, Mozzarella, Champiñones, Orégano",
+      "num_ventas": 30
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 12,
+    "fields": {
+      "titulo": "Pesto",
+      "foto": "img/pizzas/pesto.jpg",
+      "precio": "11.50",
+      "descripcion": "Base de pesto en lugar de tomate, con pollo a la parrilla y tomates cherry asados.",
+      "tipo": 3,
+      "ingredientes": "Pesto de albahaca, Mozzarella, Pollo a la parrilla, Tomate cherry, Albahaca fresca, Parmesano",
+      "num_ventas": 28
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 13,
+    "fields": {
+      "titulo": "Boletus",
+      "foto": "img/pizzas/boletus.jpg",
+      "precio": "12.50",
+      "descripcion": "Para los amantes de las setas, con un toque final de aceite de trufa.",
+      "tipo": 3,
+      "ingredientes": "Mozzarella, Boletus, Champiñones, Espinacas, Albahaca fresca, Aceite de trufa",
+      "num_ventas": 45
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 14,
+    "fields": {
+      "titulo": "Euskadi",
+      "foto": "img/pizzas/euskadi.jpg",
+      "precio": "12.00",
+      "descripcion": "Lo mejor de la huerta y la quesería vascas sobre nuestra masa integral.",
+      "tipo": 3,
+      "ingredientes": "Tomate, Mozzarella, Queso Idiazabal, Pimientos de Gernika, Orégano",
+      "num_ventas": 35
+    }
+  },
+  {
+    "model": "restaurante.pizza",
+    "pk": 15,
+    "fields": {
+      "titulo": "Bonito del Norte",
+      "foto": "img/pizzas/bonito_del_norte.jpg",
+      "precio": "11.50",
+      "descripcion": "Bonito del Cantábrico con cebolla caramelizada y tomate seco.",
+      "tipo": 3,
+      "ingredientes": "Tomate, Mozzarella, Bonito del Norte, Cebolla caramelizada, Tomate seco, Cebollino",
+      "num_ventas": 25
     }
   }
 ]
