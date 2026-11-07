@@ -16,6 +16,87 @@ main {
     flex: 1;
 }
 
+/* estilo actual */
+
+header {
+    margin: 0;
+    padding: 1rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #1A2826;
+    color: #F0F2F1;
+    border-bottom: 3px solid #B82E2E;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+#titulo_header {
+    font-family: "Cherry Cream Soda", cursive;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+nav {
+    display: flex;
+    gap: 2.2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    white-space: nowrap;
+}
+
+nav a {
+    color: #F0F2F1;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+nav a:hover {
+    color: #FFFFFF;
+    border-bottom-color: #B82E2E;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2.5rem 5%;
+    background-color: #1A2826;
+    color: #F0F2F1;
+    border-top: 3px solid #B82E2E;
+}
+
+footer h2 {
+    font-size: 1.4rem;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #B82E2E;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #C9CFCD;
+    text-align: left;
+}
+
+/* estilo anterior
+
 header {
     margin: 0;
     padding: 1.2rem 5%;
@@ -61,6 +142,7 @@ nav a {
 nav a:hover {
     color: #e82f2f;
 }
+
 footer {
     display: flex;
     justify-content: space-around;
@@ -76,6 +158,9 @@ footer h2 {
 footer p {
     font-size: 100%;
 }
+
+*/
+
 @media only screen and (max-width: 700px) {
     header {
         justify-content: center;
