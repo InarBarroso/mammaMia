@@ -21,10 +21,8 @@
             <div class="imagen_texto" id="about">
                 <article>
                 <h2>Nuestros Origenes</h2>
-                {% comment %}
-                <p>En Mamma Mia unimos la esencia de la cocina japonesa con la identidad gastronómica vasca.</p>
-                <p>Elaboramos sushi y platos de fusión combinando técnicas japonesas, producto local y sabores que forman parte de nuestra cultura. Una propuesta diferente, cuidada y llena de personalidad.</p>
-                {% endcomment %}
+                <p>En Mamma Mia unimos la esencia de la cocina italiana con la identidad gastronómica vasca.</p>
+                <p>Elaboramos piizas combinando técnicas italinas, producto local y sabores que forman parte de nuestra cultura. Una propuesta diferente, cuidada y llena de personalidad.</p>
                 </article>
                 <img src="../static/img/imagen1.jpg" alt="restaurante">
             </div>
@@ -39,7 +37,7 @@
                         <img src="{% static pizza.foto %}" alt="Pizza {{ pizza.titulo }}">
                         <div>
                         <h3>{{pizza.titulo}}</h3>
-                        <h3>{{pizza.descripcion}}</h3>
+                        <p>{{pizza.descripcion}}</p>
                         <a href="{% url 'filtrarpizza' pizza.id %}" id="boton">Detalles</a>
                         </div>
                     </section>
