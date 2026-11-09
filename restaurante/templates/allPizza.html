@@ -17,7 +17,7 @@
             </div>
             <div id="bloque_pizzas">
                 <div id="tit_bloque_pizzas">
-                    <h2>Las más vendidas</h2>
+                    <h2>Nuestra propuesta</h2>
                 </div>
                 <div id="vista_pizzas">
 
@@ -26,7 +26,7 @@
                         <img src="{% static pizza.foto %}" alt="Pizza {{ pizza.titulo }}">
                         <div>
                         <h3>{{pizza.titulo}}</h3>
-                        <h3>{{pizza.descripcion}}</h3>
+                        <p>{{pizza.descripcion}}</p>
                         <a href="{% url 'filtrarpizza' pizza.id %}" id="boton">Detalles</a>
                         </div>
                     </section>

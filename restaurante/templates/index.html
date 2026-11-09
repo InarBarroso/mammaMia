@@ -15,7 +15,7 @@
     <body>
         <header>
             <div id="titulo">
-                <a href="#" id="titulo_header">Mamma Mia</a>
+                <a href="{% url 'home' %}" id="titulo_header">Mamma Mia</a>
             </div>
             <nav>
                 <a href="{% url 'home' %}">Inicio</a>
@@ -37,7 +37,8 @@
             </div>
             <div id="localizacion">
                 <h2>Encuéntranos</h2>
-                <p>Dirección: Calle Ejemplo, 1, Bilbao</p>
+                <p>Dirección: Calle Ledesma, 10, 48001 Bilbao</p>
+                <iframe src="https://maps.google.com/maps?q=Calle+Ledesma+10+48001+Bilbao&amp;z=16&amp;output=embed" title="Mapa de Mamma Mia" loading="lazy"></iframe>
             </div>
         </footer>
     </body>

@@ -5,9 +5,6 @@ from .models import Pizza, TipoMasa
 # Create your views here.
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the restaurante index.")
-
 
 def home(request):
     pizzas = Pizza.objects.order_by('-num_ventas')[:3]
