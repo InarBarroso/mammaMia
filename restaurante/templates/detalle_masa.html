@@ -33,12 +33,14 @@
 
             {% for pizza in pizzas %}
             <section>
-                <img src="{% static pizza.foto %}" alt="Pizza {{ pizza.titulo }}">
+                {% if pizza.foto %}
+                    <img src="{% static pizza.foto %}" alt="Pizza {{ pizza.titulo }}">
+                {% endif %}
                 <div>
                     <h3>{{ pizza.titulo }}</h3>
                     <p>{{ pizza.descripcion }}</p>
                     <p class="precio">{{ pizza.precio }} €</p>
-                    <a href="{% url 'filtrarpizza' pizza.id %}" id="boton">Detalles</a>
+                    <a href="{% url 'filtrarpizza' pizza.id %}" class="boton">Detalles</a>
                 </div>
             </section>
             {% endfor %}
