@@ -229,7 +229,7 @@ section p{
     padding-top: 2%;
 }
 
-/* #boton_reserva, */ #boton{
+/* #boton_reserva, */ .boton{
     align-self: center;
     background-color: #B82E2E;
     color: #FFFFFF;
@@ -248,7 +248,7 @@ section p{
     cursor: pointer;
 }
 
-/* #boton_reserva:hover {
+/* .boton_reserva:hover {
     background-color: #962323;
     transform: scale(1.08);
 } */
