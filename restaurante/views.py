@@ -53,3 +53,9 @@ def filtrarmasa(request, idMasa):
     return render(request, "detalle_masa.html", context)
 
 
+def addpizza(request):
+    masas = TipoMasa.objects.all()
+    context = {
+        'masas': masas
+    }
+    return render(request, "addPizzaAdmin.html", context)
