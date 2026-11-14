@@ -9,6 +9,5 @@ urlpatterns = [
     path('all_masas', allmasas, name='all_masas'),
     path('masa/<int:idMasa>', filtrarmasa, name='filtrarmasa'),
     path('addpizza', addpizza, name='addPizza'),
-    # inicio de sesión (index.html enlaza con {% url 'login' %})
     path('login', login_view, name='login'),
 ]

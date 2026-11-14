@@ -1,7 +1,3 @@
-/* estilos de la página de inicio de sesión (login.html)
-   esta página NO carga main.css: solo index.css (header/footer) y este archivo */
-
-/* el bloque de login ocupa todo el alto que queda entre header y footer */
 main {
     display: flex;
     flex-direction: column;
@@ -16,8 +12,6 @@ main {
     box-sizing: border-box;
     border: none;
     border-radius: 0;
-
-    /* foto de la Toscana (la misma de la portada) oscurecida con un degradado */
     background-image:
         linear-gradient(rgba(26, 40, 38, 0.78), rgba(26, 40, 38, 0.78)),
         url('../img/toscana.jpg');
@@ -25,7 +19,6 @@ main {
     background-position: center;
 }
 
-/* tarjeta central */
 .login_caja {
     width: 100%;
     max-width: 420px;

@@ -69,7 +69,6 @@ nav a:hover {
     border-bottom-color: #B82E2E;
 }
 
-/* enlace de iniciar sesión: como un botón pequeño para distinguirlo del menú */
 nav .nav_login {
     border: 2px solid #B82E2E;
     border-radius: 6px;

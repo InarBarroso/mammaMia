@@ -53,8 +53,6 @@ def filtrarmasa(request, idMasa):
     return render(request, "detalle_masa.html", context)
 
 def login_view(request):
-    # página de inicio de sesión --> /login
-    # paso 1: solo muestra la página; el formulario y el acceso llegan en los siguientes pasos
     return render(request, 'login.html')
 
 def addpizza(request):
