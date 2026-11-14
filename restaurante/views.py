@@ -57,3 +57,9 @@ def login_view(request):
     # paso 1: solo muestra la página; el formulario y el acceso llegan en los siguientes pasos
     return render(request, 'login.html')
 
+def addpizza(request):
+    masas = TipoMasa.objects.all()
+    context = {
+        'masas': masas
+    }
+    return render(request, "addPizzaAdmin.html", context)

@@ -1,7 +1,4 @@
-/* estilos de las páginas de masas (lista y detalle)
-   las tarjetas usan las mismas clases que la página de pizzas (main.css) */
 
-/* que las fotos no se salgan de las tarjetas */
 section img {
     width: 100%;
     height: 220px;
