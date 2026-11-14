@@ -4,23 +4,15 @@
 {% block title %}Añadir Pizza{% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/forms.css' %}">
 {% endblock %}
 
 {%block content%}
-        <main>
+        
 
-                <div id="portada1">
-                <h1>Añade una nueva Pizza</h1>
-                </div>
                 
-            <div id="bloque_pizzas">
-                <div id="tit_bloque_pizzas">
-                    <h2>Nuestra propuesta</h2>
-                </div>
-                <div id="vista_pizzas">
-
+                <div id="bloqueFormulario">
+                    <h1>Añade una nueva Pizza</h1>
                      <form action="form.py" method="post">
                         <fieldset>
                             <legend>Detalles de la pizza:</legend>
@@ -34,30 +26,26 @@
                             <legend>Ingredientes:</legend>
                           
                             <label for="tipoMasa">Tipo de masas:</label><br>
-                            <select multiple name="tipoMasa" id="tipoMasa">
+                            <select  name="tipoMasa" id="tipoMasa">
                                     {% for masa in masas %}
-                                    <section>
                                         <option selected value={{masa.id}}>{{ masa.titulo }}</option>
-                                    </section>
                                     {% endfor %}    
                             </select>
                             <br><br>
                             <label for="todoIngredientes">Tipo de masas:</label><br>
-                            <select multiple name="todoIngredientes" id="todoIngredientes">
+                            <select  name="todoIngredientes" id="todoIngredientes">
                                     {% for ingrediente in ingredientes %}
-                                    <section>
                                         <option selected value={{ingrediente.id}}>{{ ingrediente.titulo }}</option>
-                                    </section>
                                     {% endfor %}    
                             </select>
                         </fieldset>
-                        <input type="submit" name="Entregar" id="entregar">
+                        <input type="submit" id="entregar" name="Entregar" value="Añadir pizza">
                     
                     </form>
                 </div>
-            </div>
+           
 
         
-        </main>
+        
 
 {%endblock%}

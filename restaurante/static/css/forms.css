@@ -1,4 +1,15 @@
 
+#bloqueFormulario{
+    width: 80%;
+    margin: 0 auto;
+    padding: 2%;
+    border-radius: 12px;
+    box-shadow:0 10px 30px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 form{
     display: flex;
@@ -7,6 +18,8 @@ form{
     padding-bottom: 2%;
     margin-bottom: 2%;
     border-radius: 12px;
+    width: 80%;
+
     box-shadow:0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
@@ -57,7 +70,7 @@ input[type="radio"] {
     border: none;
     border-radius: 6px;
     margin-top: 10px;
-    width: 70%;
+    width: 40%;
 }
 
 #entregar:hover {
@@ -67,4 +80,6 @@ input[type="radio"] {
 #entregar:active {
     transform: scale(0.98);
 }
+
+
 

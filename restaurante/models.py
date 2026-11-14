@@ -22,3 +22,12 @@ class Pizza(models.Model):
 
     def __str__(self):
         return self.titulo
+
+
+class User(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    password = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nombre
