@@ -1,0 +1,52 @@
+/* estilos de la página de inicio de sesión (login.html)
+   esta página NO carga main.css: solo index.css (header/footer) y este archivo */
+
+/* el bloque de login ocupa todo el alto que queda entre header y footer */
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+#login {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0;
+
+    /* foto de la Toscana (la misma de la portada) oscurecida con un degradado */
+    background-image:
+        linear-gradient(rgba(26, 40, 38, 0.78), rgba(26, 40, 38, 0.78)),
+        url('../img/toscana.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* tarjeta central */
+.login_caja {
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem 2.5rem 2rem;
+    box-sizing: border-box;
+    background-color: #F8F7F4;
+    border-top: 5px solid #B82E2E;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    text-align: center;
+}
+
+.login_caja h1 {
+    font-family: "Cherry Cream Soda", cursive;
+    font-size: 2.6rem;
+    color: #1A2826;
+    margin: 0 0 0.5rem;
+}
+
+.login_caja p {
+    color: #5A6260;
+    font-size: 1.1rem;
+    margin: 0;
+}
