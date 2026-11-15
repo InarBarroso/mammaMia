@@ -18,11 +18,35 @@
                 <div id="tit_bloque_pizzas">
                     <h2>Nuestra propuesta</h2>
                 </div>
+
+                <form action="{% url 'all_pizza' %}" method="get" id="filtro_ingredientes">
+                    <fieldset>
+                        <legend>Filtrar por ingredientes</legend>
+                        <div id="lista_ingredientes">
+                            {% for ingrediente in ingredientes %}
+                            <label>
+                                <input type="checkbox" name="ingrediente" value="{{ ingrediente.id }}"{% if ingrediente.id in seleccionados %} checked{% endif %}>
+                                {{ ingrediente.titulo }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                        <div id="botones_filtro">
+                            <input type="submit" value="Filtrar" class="boton">
+                            {% if seleccionados %}
+                            <a href="{% url 'all_pizza' %}">Quitar filtro</a>
+                            {% endif %}
+                        </div>
+                    </fieldset>
+                </form>
+
+                {% if pizzas %}
                 <div id="vista_pizzas">
 
                     {%for pizza in pizzas%}
                     <section>
-                        <img src="{% static pizza.foto %}" alt="Pizza {{ pizza.titulo }}">
+                        {% if pizza.foto %}
+                        <img src="{{ pizza.foto.url }}" alt="Pizza {{ pizza.titulo }}">
+                        {% endif %}
                         <div>
                         <h3>{{pizza.titulo}}</h3>
                         <p>{{pizza.descripcion}}</p>
@@ -32,6 +56,13 @@
                     {%endfor%}
                     
                 </div>
+                {% else %}
+                {% if seleccionados %}
+                <p class="sin_pizzas">No hay ninguna pizza que lleve todos esos ingredientes.</p>
+                {% else %}
+                <p class="sin_pizzas">Todavía no hay pizzas.</p>
+                {% endif %}
+                {% endif %}
             </div>
 
         

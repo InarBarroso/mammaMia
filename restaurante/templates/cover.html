@@ -33,7 +33,9 @@
 
                     {%for pizza in pizzas%}
                     <section>
-                        <img src="{% static pizza.foto %}" alt="Pizza {{ pizza.titulo }}">
+                        {% if pizza.foto %}
+                        <img src="{{ pizza.foto.url }}" alt="Pizza {{ pizza.titulo }}">
+                        {% endif %}
                         <div>
                         <h3>{{pizza.titulo}}</h3>
                         <p>{{pizza.descripcion}}</p>

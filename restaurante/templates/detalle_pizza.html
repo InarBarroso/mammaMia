@@ -12,7 +12,7 @@
     <div class="imagen_texto" id="detalle_pizza">
 
         {% if pizza.foto %}
-            <img src="{% static pizza.foto %}" alt="Pizza {{ pizza.titulo }}">
+            <img src="{{ pizza.foto.url }}" alt="Pizza {{ pizza.titulo }}">
         {% endif %}
 
         <article>
@@ -26,7 +26,7 @@
             <h3>Ingredientes</h3>
             <ul class="ingredientes">
             {% for ingrediente in ingredientes %}
-                <li>{{ ingrediente }}</li>
+                <li>{{ ingrediente.titulo }}</li>
             {% endfor %}
             </ul>
         </article>

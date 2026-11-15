@@ -3,3 +3,4 @@ from .models import *
 
 admin.site.register(Pizza)
 admin.site.register(TipoMasa)
+admin.site.register(Ingrediente)

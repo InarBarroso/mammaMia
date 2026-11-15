@@ -5,7 +5,7 @@
     "fields": {
       "titulo": "Napolitana",
       "descripcion": "Masa de fermentación lenta (48 horas), con bordes altos y esponjosos y un centro fino y tierno.",
-      "foto": "img/masas/napolitana.jpg"
+      "foto": "masas/napolitana.jpg"
     }
   },
   {
@@ -14,7 +14,7 @@
     "fields": {
       "titulo": "Romana",
       "descripcion": "Masa fina y crujiente, estirada con rodillo y con un toque de aceite de oliva.",
-      "foto": "img/masas/romana.jpg"
+      "foto": "masas/romana.jpg"
     }
   },
   {
@@ -23,7 +23,308 @@
     "fields": {
       "titulo": "Integral",
       "descripcion": "Elaborada con harina de trigo integral, de sabor más intenso y con más fibra.",
-      "foto": "img/masas/integral.jpg"
+      "foto": "masas/integral.jpg"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 1,
+    "fields": {
+      "titulo": "Tomate"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 2,
+    "fields": {
+      "titulo": "Mozzarella fior di latte"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 3,
+    "fields": {
+      "titulo": "Tomate en rodajas"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 4,
+    "fields": {
+      "titulo": "Albahaca fresca"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 5,
+    "fields": {
+      "titulo": "Aceite de oliva virgen extra"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 6,
+    "fields": {
+      "titulo": "Mozzarella"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 7,
+    "fields": {
+      "titulo": "Salami picante"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 8,
+    "fields": {
+      "titulo": "Guindilla"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 9,
+    "fields": {
+      "titulo": "Calabacín"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 10,
+    "fields": {
+      "titulo": "Berenjena"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 11,
+    "fields": {
+      "titulo": "Pimiento rojo"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 12,
+    "fields": {
+      "titulo": "Champiñones"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 13,
+    "fields": {
+      "titulo": "Cebollitas"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 14,
+    "fields": {
+      "titulo": "Ajo"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 15,
+    "fields": {
+      "titulo": "Orégano"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 16,
+    "fields": {
+      "titulo": "Gorgonzola"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 17,
+    "fields": {
+      "titulo": "Parmesano"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 18,
+    "fields": {
+      "titulo": "Queso Idiazabal"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 19,
+    "fields": {
+      "titulo": "Jamón cocido"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 20,
+    "fields": {
+      "titulo": "Alcachofas"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 21,
+    "fields": {
+      "titulo": "Aceitunas negras"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 22,
+    "fields": {
+      "titulo": "Txistorra"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 23,
+    "fields": {
+      "titulo": "Nata"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 24,
+    "fields": {
+      "titulo": "Bacon"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 25,
+    "fields": {
+      "titulo": "Pimienta negra"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 26,
+    "fields": {
+      "titulo": "Prosciutto crudo"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 27,
+    "fields": {
+      "titulo": "Rúcula"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 28,
+    "fields": {
+      "titulo": "Parmesano en lascas"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 29,
+    "fields": {
+      "titulo": "Pesto de albahaca"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 30,
+    "fields": {
+      "titulo": "Mortadela"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 31,
+    "fields": {
+      "titulo": "Burrata"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 32,
+    "fields": {
+      "titulo": "Pistachos troceados"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 33,
+    "fields": {
+      "titulo": "Crema de balsámico"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 34,
+    "fields": {
+      "titulo": "Pollo a la parrilla"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 35,
+    "fields": {
+      "titulo": "Tomate cherry"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 36,
+    "fields": {
+      "titulo": "Boletus"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 37,
+    "fields": {
+      "titulo": "Espinacas"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 38,
+    "fields": {
+      "titulo": "Aceite de trufa"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 39,
+    "fields": {
+      "titulo": "Pimientos de Gernika"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 40,
+    "fields": {
+      "titulo": "Bonito del Norte"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 41,
+    "fields": {
+      "titulo": "Cebolla caramelizada"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 42,
+    "fields": {
+      "titulo": "Tomate seco"
+    }
+  },
+  {
+    "model": "restaurante.ingrediente",
+    "pk": 43,
+    "fields": {
+      "titulo": "Cebollino"
     }
   },
   {
@@ -31,11 +332,11 @@
     "pk": 1,
     "fields": {
       "titulo": "Margarita",
-      "foto": "img/pizzas/margarita.jpg",
+      "foto": "pizzas/margarita.jpg",
       "precio": "9.50",
       "descripcion": "La clásica de Nápoles: sencilla, con el tomate y la albahaca como protagonistas.",
       "tipo": 1,
-      "ingredientes": "Tomate, Mozzarella fior di latte, Tomate en rodajas, Albahaca fresca, Aceite de oliva virgen extra",
+      "ingredientes": [1, 2, 3, 4, 5],
       "num_ventas": 120
     }
   },
@@ -44,11 +345,11 @@
     "pk": 2,
     "fields": {
       "titulo": "Diavola",
-      "foto": "img/pizzas/diavola.jpg",
+      "foto": "pizzas/diavola.jpg",
       "precio": "11.00",
       "descripcion": "Para los que buscan un punto picante.",
       "tipo": 2,
-      "ingredientes": "Tomate, Mozzarella, Salami picante, Albahaca fresca, Guindilla",
+      "ingredientes": [1, 6, 7, 4, 8],
       "num_ventas": 85
     }
   },
@@ -57,11 +358,11 @@
     "pk": 3,
     "fields": {
       "titulo": "Vegetal",
-      "foto": "img/pizzas/vegetal.jpg",
+      "foto": "pizzas/vegetal.jpg",
       "precio": "10.50",
       "descripcion": "Verduras de temporada asadas sobre nuestra masa integral.",
       "tipo": 3,
-      "ingredientes": "Tomate, Mozzarella, Calabacín, Berenjena, Pimiento rojo, Champiñones, Cebollitas",
+      "ingredientes": [1, 6, 9, 10, 11, 12, 13],
       "num_ventas": 40
     }
   },
@@ -70,11 +371,11 @@
     "pk": 4,
     "fields": {
       "titulo": "Marinara",
-      "foto": "img/pizzas/marinara.jpg",
+      "foto": "pizzas/marinara.jpg",
       "precio": "8.00",
       "descripcion": "Una de las pizzas más antiguas de Nápoles: sin queso, solo tomate, ajo y orégano.",
       "tipo": 1,
-      "ingredientes": "Tomate, Ajo, Orégano, Aceite de oliva virgen extra",
+      "ingredientes": [1, 14, 15, 5],
       "num_ventas": 20
     }
   },
@@ -83,11 +384,11 @@
     "pk": 5,
     "fields": {
       "titulo": "Cuatro Quesos",
-      "foto": "img/pizzas/cuatro_quesos.jpg",
+      "foto": "pizzas/cuatro_quesos.jpg",
       "precio": "11.50",
       "descripcion": "La clásica de cuatro quesos, con un invitado vasco: el queso Idiazabal.",
       "tipo": 1,
-      "ingredientes": "Mozzarella, Gorgonzola, Parmesano, Queso Idiazabal, Orégano",
+      "ingredientes": [6, 16, 17, 18, 15],
       "num_ventas": 110
     }
   },
@@ -96,11 +397,11 @@
     "pk": 6,
     "fields": {
       "titulo": "Capricciosa",
-      "foto": "img/pizzas/capricciosa.jpg",
+      "foto": "pizzas/capricciosa.jpg",
       "precio": "11.00",
       "descripcion": "La «caprichosa»: para quien no se decide y lo quiere todo en la misma pizza.",
       "tipo": 1,
-      "ingredientes": "Tomate, Mozzarella, Jamón cocido, Champiñones, Alcachofas, Aceitunas negras",
+      "ingredientes": [1, 6, 19, 12, 20, 21],
       "num_ventas": 60
     }
   },
@@ -109,11 +410,11 @@
     "pk": 7,
     "fields": {
       "titulo": "Txistorra",
-      "foto": "img/pizzas/txistorra.jpg",
+      "foto": "pizzas/txistorra.jpg",
       "precio": "11.50",
       "descripcion": "Nuestro guiño a la barra de pintxos vasca.",
       "tipo": 1,
-      "ingredientes": "Tomate, Mozzarella, Txistorra",
+      "ingredientes": [1, 6, 22],
       "num_ventas": 70
     }
   },
@@ -122,11 +423,11 @@
     "pk": 8,
     "fields": {
       "titulo": "Carbonara",
-      "foto": "img/pizzas/carbonara.jpg",
+      "foto": "pizzas/carbonara.jpg",
       "precio": "12.00",
       "descripcion": "La carbonara de pizzería: base blanca de nata, sin tomate, con bacon y champiñones.",
       "tipo": 2,
-      "ingredientes": "Nata, Mozzarella, Bacon, Champiñones, Parmesano, Pimienta negra",
+      "ingredientes": [23, 6, 24, 12, 17, 25],
       "num_ventas": 95
     }
   },
@@ -135,11 +436,11 @@
     "pk": 9,
     "fields": {
       "titulo": "Prosciutto e Rucola",
-      "foto": "img/pizzas/prosciutto_e_rucola.jpg",
+      "foto": "pizzas/prosciutto_e_rucola.jpg",
       "precio": "12.50",
       "descripcion": "El prosciutto y la rúcula se añaden al salir del horno para que lleguen frescos a la mesa.",
       "tipo": 2,
-      "ingredientes": "Tomate, Mozzarella, Prosciutto crudo, Rúcula, Parmesano en lascas",
+      "ingredientes": [1, 6, 26, 27, 28],
       "num_ventas": 55
     }
   },
@@ -148,11 +449,11 @@
     "pk": 10,
     "fields": {
       "titulo": "Bilbaína",
-      "foto": "img/pizzas/bilbaina.jpg",
+      "foto": "pizzas/bilbaina.jpg",
       "precio": "13.00",
       "descripcion": "La especialidad de la casa: mortadela, burrata y pistacho sobre una base de pesto.",
       "tipo": 2,
-      "ingredientes": "Pesto de albahaca, Mozzarella, Mortadela, Burrata, Pistachos troceados, Crema de balsámico",
+      "ingredientes": [29, 6, 30, 31, 32, 33],
       "num_ventas": 50
     }
   },
@@ -161,11 +462,11 @@
     "pk": 11,
     "fields": {
       "titulo": "Siciliana",
-      "foto": "img/pizzas/siciliana.jpg",
+      "foto": "pizzas/siciliana.jpg",
       "precio": "11.00",
       "descripcion": "Rectangular y horneada en bandeja, con champiñones bajo una buena capa de queso.",
       "tipo": 2,
-      "ingredientes": "Tomate, Mozzarella, Champiñones, Orégano",
+      "ingredientes": [1, 6, 12, 15],
       "num_ventas": 30
     }
   },
@@ -174,11 +475,11 @@
     "pk": 12,
     "fields": {
       "titulo": "Pesto",
-      "foto": "img/pizzas/pesto.jpg",
+      "foto": "pizzas/pesto.jpg",
       "precio": "11.50",
       "descripcion": "Base de pesto en lugar de tomate, con pollo a la parrilla y tomates cherry asados.",
       "tipo": 3,
-      "ingredientes": "Pesto de albahaca, Mozzarella, Pollo a la parrilla, Tomate cherry, Albahaca fresca, Parmesano",
+      "ingredientes": [29, 6, 34, 35, 4, 17],
       "num_ventas": 28
     }
   },
@@ -187,11 +488,11 @@
     "pk": 13,
     "fields": {
       "titulo": "Boletus",
-      "foto": "img/pizzas/boletus.jpg",
+      "foto": "pizzas/boletus.jpg",
       "precio": "12.50",
       "descripcion": "Para los amantes de las setas, con un toque final de aceite de trufa.",
       "tipo": 3,
-      "ingredientes": "Mozzarella, Boletus, Champiñones, Espinacas, Albahaca fresca, Aceite de trufa",
+      "ingredientes": [6, 36, 12, 37, 4, 38],
       "num_ventas": 45
     }
   },
@@ -200,11 +501,11 @@
     "pk": 14,
     "fields": {
       "titulo": "Euskadi",
-      "foto": "img/pizzas/euskadi.jpg",
+      "foto": "pizzas/euskadi.jpg",
       "precio": "12.00",
       "descripcion": "Lo mejor de la huerta y la quesería vascas sobre nuestra masa integral.",
       "tipo": 3,
-      "ingredientes": "Tomate, Mozzarella, Queso Idiazabal, Pimientos de Gernika, Orégano",
+      "ingredientes": [1, 6, 18, 39, 15],
       "num_ventas": 35
     }
   },
@@ -213,11 +514,11 @@
     "pk": 15,
     "fields": {
       "titulo": "Bonito del Norte",
-      "foto": "img/pizzas/bonito_del_norte.jpg",
+      "foto": "pizzas/bonito_del_norte.jpg",
       "precio": "11.50",
       "descripcion": "Bonito del Cantábrico con cebolla caramelizada y tomate seco.",
       "tipo": 3,
-      "ingredientes": "Tomate, Mozzarella, Bonito del Norte, Cebolla caramelizada, Tomate seco, Cebollino",
+      "ingredientes": [1, 6, 40, 41, 42, 43],
       "num_ventas": 25
     }
   }

@@ -3,21 +3,29 @@ from django.db import models
 class TipoMasa(models.Model):
     titulo = models.CharField(max_length=100)
     descripcion = models.TextField()
-    foto = models.CharField(max_length=255)
+    foto = models.ImageField(upload_to='masas/') #la imagen se guarda en MEDIA_ROOT/masas/ -> carpeta media
+
+    def __str__(self):
+        return self.titulo
+
+class Ingrediente(models.Model):
+    titulo = models.CharField(max_length=100, unique=True)
+    class Meta:
+        ordering = ['titulo']  #siempre se listan por orden alfabético
 
     def __str__(self):
         return self.titulo
 
 class Pizza(models.Model):
     titulo = models.CharField(max_length=100)
-    foto = models.CharField(max_length=255)
+    foto = models.ImageField(upload_to='pizzas/')
     precio = models.DecimalField(max_digits=6, decimal_places=2)
     descripcion = models.TextField()
     tipo = models.ForeignKey(
         TipoMasa,
         on_delete=models.PROTECT,  # Si queremos borrar una masa, no debe existir ninguna pizza con esa masa asociada.
     )
-    ingredientes = models.TextField()
+    ingredientes = models.ManyToManyField(Ingrediente) #una pizza lleva muchos ingredientes y un mismo ingrediente puede estar en muchas pizzas
     num_ventas = models.IntegerField(default=0)
 
     def __str__(self):

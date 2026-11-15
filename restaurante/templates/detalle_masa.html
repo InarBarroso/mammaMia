@@ -12,7 +12,7 @@
     <div class="imagen_texto" id="detalle_masa">
 
         {% if masa.foto %}
-            <img src="{% static masa.foto %}" alt="Masa {{ masa.titulo }}">
+            <img src="{{ masa.foto.url }}" alt="Masa {{ masa.titulo }}">
         {% endif %}
 
         <article>
@@ -34,7 +34,7 @@
             {% for pizza in pizzas %}
             <section>
                 {% if pizza.foto %}
-                    <img src="{% static pizza.foto %}" alt="Pizza {{ pizza.titulo }}">
+                    <img src="{{ pizza.foto.url }}" alt="Pizza {{ pizza.titulo }}">
                 {% endif %}
                 <div>
                     <h3>{{ pizza.titulo }}</h3>

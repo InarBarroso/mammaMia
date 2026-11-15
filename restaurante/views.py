@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Pizza, TipoMasa
+from .models import Pizza, TipoMasa, Ingrediente
 
 # Create your views here.
 
@@ -18,9 +18,7 @@ def filtrarpizza(request, idPizza):
     # busca la pizza por su id; si no existe, lanza Http404 automáticamente
     pizza = get_object_or_404(Pizza, pk=idPizza)
 
-    # los ingredientes se guardan como texto: "Tomate, Mozzarella, Albahaca"
-    # lo separamos por las comas para poder mostrarlos como lista en el template
-    ingredientes = [i.strip() for i in pizza.ingredientes.split(',') if i.strip()]
+    ingredientes = pizza.ingredientes.all()
 
     contexto = {
         'pizza': pizza,
@@ -30,8 +28,20 @@ def filtrarpizza(request, idPizza):
 
 def allpizzas(request):
     pizzas = Pizza.objects.all()
+
+    seleccionados = []
+    for valor in request.GET.getlist('ingrediente'):
+        if valor.isdecimal() and int(valor) not in seleccionados:
+            seleccionados.append(int(valor))
+
+    #por cada ingrediente marcado nos quedamos solo con las pizzas que lo llevan, así que al final quedan las pizzas que llevan TODOS los ingredientes marcados
+    for id_ingrediente in seleccionados:
+        pizzas = pizzas.filter(ingredientes__id=id_ingrediente)
+
     context = {
-        'pizzas': pizzas
+        'pizzas': pizzas,
+        'ingredientes': Ingrediente.objects.all(), #para pintar los checkbox
+        'seleccionados': seleccionados, #para dejar marcados los que se han elegido
     }
     return render(request, "allPizza.html", context)
 

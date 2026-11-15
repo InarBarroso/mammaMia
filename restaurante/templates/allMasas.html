@@ -21,7 +21,9 @@
 
             {% for masa in masas %}
             <section>
-                <img src="{% static masa.foto %}" alt="Masa {{ masa.titulo }}">
+                {% if masa.foto %}
+                <img src="{{ masa.foto.url }}" alt="Masa {{ masa.titulo }}">
+                {% endif %}
                 <div>
                     <h3>{{ masa.titulo }}</h3>
                     <p>{{ masa.descripcion }}</p>
