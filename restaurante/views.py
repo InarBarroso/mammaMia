@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import Pizza, TipoMasa, Ingrediente
+from .models import Pizza, TipoMasa, Ingrediente, User
+from .forms import LoginForm
 
 # Create your views here.
 
@@ -63,7 +64,31 @@ def filtrarmasa(request, idMasa):
     return render(request, "detalle_masa.html", context)
 
 def login_view(request):
-    return render(request, 'login.html')
+    if request.method == 'POST':
+        # formulario "bound": le asociamos los datos que ha enviado el usuario
+        form = LoginForm(request.POST)
+        # validamos los datos (campos obligatorios, formato de email...)
+        if form.is_valid():
+            # los datos ya validados quedan en form.cleaned_data
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+
+            usuario = User.objects.filter(email=email, password=password).first()
+            if usuario:
+                # guardamos en la sesión quién ha iniciado sesión
+                request.session['usuario_id'] = usuario.id
+                request.session['usuario_nombre'] = usuario.nombre
+                # redireccionamos a otra URL (igual que HttpResponseRedirect('/'))
+                return redirect('home')
+
+            # el email o la contraseña no coinciden: error general del formulario (non_field_errors)
+            form.add_error(None, 'El email o la contraseña no son correctos.')
+    else:
+        # si es GET (primera vez que se entra) creamos un formulario vacío, "unbound"
+        form = LoginForm()
+
+    # se pinta la plantilla con el formulario vacío o con los datos y los errores
+    return render(request, 'login.html', {'form': form})
 
 def addpizza(request):
     masas = TipoMasa.objects.all()

@@ -43,3 +43,82 @@ main {
     font-size: 1.1rem;
     margin: 0;
 }
+
+/* formulario de login */
+#form_login {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-top: 1.8rem;
+    text-align: left;
+}
+
+.campo_login {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.campo_login label {
+    font-weight: 600;
+    color: #1A2826;
+}
+
+.campo_login input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #FFFFFF;
+    color: #1C1C1C;
+    box-sizing: border-box;
+}
+
+.campo_login input:focus {
+    outline: none;
+    border-color: #B82E2E;
+    box-shadow: 0 0 0 3px rgba(184, 46, 46, 0.12);
+}
+
+/* Django pinta los errores como <ul class="errorlist"> */
+#form_login .errorlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #B82E2E;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* error general (email o contraseña incorrectos): en una caja arriba del formulario */
+#form_login > .errorlist {
+    padding: 10px 14px;
+    background-color: rgba(184, 46, 46, 0.08);
+    border-left: 4px solid #B82E2E;
+    border-radius: 6px;
+}
+
+.boton_login {
+    margin-top: 0.4rem;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #B82E2E;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.boton_login:hover {
+    background-color: #962323;
+}
+
+@media only screen and (max-width:700px){
+    .login_caja {
+        padding: 2rem 1.4rem 1.6rem;
+    }
+}

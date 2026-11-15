@@ -12,6 +12,28 @@
         <div class="login_caja">
             <h1>Iniciar sesión</h1>
             <p>Accede con tu cuenta para gestionar la carta de Mamma Mia.</p>
+
+            <form method="post" action="{% url 'login' %}" id="form_login" novalidate>
+                {% csrf_token %}
+
+                {# errores que no son de un campo concreto (p. ej. email o contraseña incorrectos) #}
+                {{ form.non_field_errors }}
+
+                {# renderizado manual: errores del campo, label completo con label_tag y el input #}
+                <div class="campo_login">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                </div>
+
+                <div class="campo_login">
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+                    {{ form.password.errors }}
+                </div>
+
+                <input type="submit" value="Entrar" class="boton_login">
+            </form>
         </div>
     </section>
 {% endblock %}

@@ -291,15 +291,41 @@ section img {
     width: 80%;
     margin: 0 auto 40px auto;
 }
-#filtro_ingredientes fieldset {
+#filtro_ingredientes details {
     border: 2px solid #2b2b2b;
     border-radius: 12px;
-    padding: 20px;
+    padding: 0 20px;
 }
-#filtro_ingredientes legend {
+/* el título del desplegable: se puede pulsar en toda la franja */
+#filtro_ingredientes summary {
     font-size: 1.2rem;
     font-weight: 600;
-    padding: 0 10px;
+    padding: 16px 0;
+    cursor: pointer;
+    list-style: none; /* quitamos el triángulo por defecto del navegador... */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#filtro_ingredientes summary::-webkit-details-marker {
+    display: none; /* ...también en Safari */
+}
+/* ...y ponemos una flecha propia a la derecha que gira al abrir */
+#filtro_ingredientes summary::after {
+    content: "▾";
+    margin-left: auto;
+    transition: transform 0.2s;
+}
+#filtro_ingredientes details[open] summary::after {
+    transform: rotate(180deg);
+}
+#filtro_ingredientes .num_marcados {
+    color: #B82E2E;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+#filtro_ingredientes details[open] {
+    padding-bottom: 20px;
 }
 #lista_ingredientes {
     display: grid;
@@ -331,8 +357,19 @@ section img {
     text-align: center;
 }
 @media only screen and (max-width:700px){
-#filtro_ingredientes fieldset {
-    padding: 12px;
+#filtro_ingredientes details {
+    padding: 0 12px;
+}
+#filtro_ingredientes summary {
+    font-size: 1rem;
+    flex-wrap: wrap;
+    row-gap: 2px;
+}
+#filtro_ingredientes .num_marcados {
+    font-size: 0.9rem;
+}
+#filtro_ingredientes details[open] {
+    padding-bottom: 12px;
 }
 #lista_ingredientes {
     grid-template-columns: 1fr 1fr;

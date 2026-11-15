@@ -20,8 +20,12 @@
                 </div>
 
                 <form action="{% url 'all_pizza' %}" method="get" id="filtro_ingredientes">
-                    <fieldset>
-                        <legend>Filtrar por ingredientes</legend>
+                    <!-- details/summary: desplegable nativo de HTML, se abre y cierra al pulsar el título sin necesidad de JavaScript -->
+                    <details>
+                        <summary>
+                            Filtrar por ingredientes
+                            {% if seleccionados %}<span class="num_marcados">({{ seleccionados|length }} marcado{{ seleccionados|length|pluralize }})</span>{% endif %}
+                        </summary>
                         <div id="lista_ingredientes">
                             {% for ingrediente in ingredientes %}
                             <label>
@@ -36,7 +40,7 @@
                             <a href="{% url 'all_pizza' %}">Quitar filtro</a>
                             {% endif %}
                         </div>
-                    </fieldset>
+                    </details>
                 </form>
 
                 {% if pizzas %}
