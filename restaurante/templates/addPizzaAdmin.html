@@ -13,7 +13,52 @@
                 
                 <div id="bloqueFormulario">
                     <h1>Añade una nueva Pizza</h1>
-                    <form action="form.py" method="post">
+
+                <form action="{% url 'addPizza' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <fieldset>
+                        <legend>Detalles de la pizza:</legend>
+
+                        <label for="{{ form.titulo.id_for_label }}">Nombre:</label>
+                        {{ form.titulo }}
+                        <br>
+
+                        <label for="{{ form.descripcion.id_for_label }}">Detalles:</label>
+                        {{ form.descripcion }}
+                        <br>
+
+                        <label for="{{ form.precio.id_for_label }}">Precio:</label>
+                        {{ form.precio }}
+                        <br>
+
+                        <label for="{{ form.foto.id_for_label }}">Foto:</label>
+                        {{ form.foto }}
+                        <br>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Ingredientes:</legend>
+
+                        <label for="{{ form.tipo.id_for_label }}">Tipo de masas:</label>
+                        <br>
+
+                        {{ form.tipo }}
+
+                        <br><br>
+
+                        <div id="lista_ingredientes">
+                            {{ form.ingredientes }}
+                        </div>
+
+                    </fieldset>
+
+                    <input type="submit" id="entregar"
+                        name="Entregar" value="Añadir pizza">
+
+                </form>
+                    <!-- <form action="form.py" method="post">
                         <fieldset>
                             <legend>Detalles de la pizza:</legend>
                             <label for="nombre">Nombre:</label><input type="text" id="nombre" name="nombre"><br>
@@ -46,7 +91,7 @@
                         </fieldset>
                         <input type="submit" id="entregar" name="Entregar" value="Añadir pizza">
                     
-                    </form>
+                    </form> -->
                 </div>
            
 

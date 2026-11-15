@@ -1,8 +1,8 @@
 from django import forms
+from .models import Pizza, TipoMasa, Ingrediente, User
 
 
 class LoginForm(forms.Form):
-    # Crea un <input type="email"> con su label; Django comprueba que el formato sea de email
     email = forms.EmailField(
         label='Email',
         max_length=254,
@@ -12,7 +12,7 @@ class LoginForm(forms.Form):
             'invalid': 'Introduce un email válido.',
         },
     )
-    # Crea un <input type="password"> para que no se vea lo que se escribe
+
     password = forms.CharField(
         label='Contraseña',
         max_length=100,
@@ -21,3 +21,17 @@ class LoginForm(forms.Form):
             'required': 'Introduce tu contraseña.',
         },
     )
+
+
+class addPizzaForm(forms.ModelForm):
+    class Meta:
+        model = Pizza
+        fields = ['titulo', 'descripcion', 'precio', 'foto', 'tipo', 'ingredientes']
+
+        widgets = {
+            'titulo': forms.TextInput(attrs={'id': 'nombre'}),
+            'descripcion': forms.Textarea(attrs={'id': 'detalles'}),
+            'precio': forms.NumberInput(attrs={'id': 'precio'}),
+            'tipo': forms.Select(attrs={'id': 'tipoMasa'}),
+            'ingredientes': forms.CheckboxSelectMultiple(),
+        }

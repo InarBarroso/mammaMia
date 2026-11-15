@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import Pizza, TipoMasa, Ingrediente, User
 from .forms import LoginForm
+from .forms import addPizzaForm
 
 # Create your views here.
 
@@ -91,10 +92,33 @@ def login_view(request):
     return render(request, 'login.html', {'form': form})
 
 def addpizza(request):
+
     masas = TipoMasa.objects.all()
     ingredientes = Ingrediente.objects.all()
+
+    if request.method == 'POST':
+
+        form = addPizzaForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('all_pizza')
+
+    else:
+        form = addPizzaForm()
+
     context = {
         'masas': masas,
-        'ingredientes': ingredientes
+        'ingredientes': ingredientes,
+        'form': form
     }
+
     return render(request, "addPizzaAdmin.html", context)
+
+    # masas = TipoMasa.objects.all()
+    # ingredientes = Ingrediente.objects.all()
+    # context = {
+    #     'masas': masas,
+    #     'ingredientes': ingredientes
+    # }
+    # return render(request, "addPizzaAdmin.html", context)
