@@ -13,7 +13,7 @@
                 
                 <div id="bloqueFormulario">
                     <h1>Añade una nueva Pizza</h1>
-                     <form action="form.py" method="post">
+                    <form action="form.py" method="post">
                         <fieldset>
                             <legend>Detalles de la pizza:</legend>
                             <label for="nombre">Nombre:</label><input type="text" id="nombre" name="nombre"><br>
@@ -32,12 +32,17 @@
                                     {% endfor %}    
                             </select>
                             <br><br>
-                            <label for="todoIngredientes">Tipo de masas:</label><br>
-                            <select  name="todoIngredientes" id="todoIngredientes">
-                                    {% for ingrediente in ingredientes %}
-                                        <option selected value={{ingrediente.id}}>{{ ingrediente.titulo }}</option>
-                                    {% endfor %}    
-                            </select>
+
+     
+                            
+                            <div id="lista_ingredientes">
+                                {% for ingrediente in ingredientes %}
+                                <label>
+                                    <input type="checkbox" name="ingrediente" value="{{ ingrediente.id }}"{% if ingrediente.id in seleccionados %} checked{% endif %}>
+                                    {{ ingrediente.titulo }}
+                                </label>
+                                {% endfor %}
+                            </div>
                         </fieldset>
                         <input type="submit" id="entregar" name="Entregar" value="Añadir pizza">
                     

@@ -67,7 +67,9 @@ def login_view(request):
 
 def addpizza(request):
     masas = TipoMasa.objects.all()
+    ingredientes = Ingrediente.objects.all()
     context = {
-        'masas': masas
+        'masas': masas,
+        'ingredientes': ingredientes
     }
     return render(request, "addPizzaAdmin.html", context)
