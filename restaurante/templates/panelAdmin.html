@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block title %}Panel - Mamma Mia{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/panel.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section id="panel">
+        <h1>Panel de administración</h1>
+        <p>Hola, {{ nombre }}</p>
+
+        <div class="panel_acciones">
+            <a href="{% url 'addPizza' %}" class="boton_panel boton_anadir">Añadir pizza</a>
+            <a href="{% url 'eliminarPizza' %}" class="boton_panel boton_eliminar">Eliminar pizza</a>
+        </div>
+
+        <div class="panel_dashboard"></div>
+    </section>
+{% endblock %}
