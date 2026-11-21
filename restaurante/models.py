@@ -10,11 +10,20 @@ class TipoMasa(models.Model):
 
 class Ingrediente(models.Model):
     titulo = models.CharField(max_length=100, unique=True)
+    stock = models.PositiveIntegerField(default=0)
     class Meta:
         ordering = ['titulo']  #siempre se listan por orden alfabético
 
     def __str__(self):
         return self.titulo
+
+class CompraIngrediente(models.Model):
+    ingrediente = models.ForeignKey(Ingrediente, on_delete=models.PROTECT)
+    cantidad = models.PositiveIntegerField()
+    fecha = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.cantidad} x {self.ingrediente}'
 
 class Pizza(models.Model):
     titulo = models.CharField(max_length=100)

@@ -21,7 +21,12 @@
                 <a href="{% url 'home' %}">Inicio</a>
                 <a href="{% url 'all_pizza' %}">Pizzas</a>
                 <a href="{% url 'all_masas' %}">Masas</a>
-                <a href="{% url 'login' %}" class="nav_login">Iniciar sesión</a>
+                {% if request.session.usuario_id %}
+                    <a href="{% url 'panel_admin' %}">Panel</a>
+                    <a href="{% url 'logout' %}" class="nav_login">Cerrar sesión</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="nav_login">Iniciar sesión</a>
+                {% endif %}
             </nav>
         </header>
 

@@ -80,7 +80,7 @@ def login_view(request):
                 request.session['usuario_id'] = usuario.id
                 request.session['usuario_nombre'] = usuario.nombre
                 # redireccionamos a otra URL (igual que HttpResponseRedirect('/'))
-                return redirect('home')
+                return redirect('panel_admin')
 
             # el email o la contraseña no coinciden: error general del formulario (non_field_errors)
             form.add_error(None, 'El email o la contraseña no son correctos.')
@@ -90,6 +90,23 @@ def login_view(request):
 
     # se pinta la plantilla con el formulario vacío o con los datos y los errores
     return render(request, 'login.html', {'form': form})
+
+def panel_admin(request):
+    if 'usuario_id' not in request.session:
+        return redirect('login')
+    context = {
+        'nombre': request.session.get('usuario_nombre'),
+    }
+    return render(request, "panelAdmin.html", context)
+
+def eliminar_pizza(request):
+    if 'usuario_id' not in request.session:
+        return redirect('login')
+    return render(request, "eliminarPizza.html")
+
+def logout_view(request):
+    request.session.flush()
+    return redirect('home')
 
 def addpizza(request):
 

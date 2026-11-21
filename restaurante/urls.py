@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, filtrarpizza, allpizzas, allmasas, filtrarmasa, addpizza, login_view
+from .views import home, filtrarpizza, allpizzas, allmasas, filtrarmasa, addpizza, login_view, panel_admin, logout_view, eliminar_pizza
 
 urlpatterns = [
     path('', home, name='home'),
@@ -10,4 +10,7 @@ urlpatterns = [
     path('masa/<int:idMasa>', filtrarmasa, name='filtrarmasa'),
     path('addpizza', addpizza, name='addPizza'),
     path('login', login_view, name='login'),
+    path('panel', panel_admin, name='panel_admin'),
+    path('logout', logout_view, name='logout'),
+    path('eliminarpizza', eliminar_pizza, name='eliminarPizza'),
 ]
