@@ -32,6 +32,15 @@ def ingredientes_sin_stock(pizza, cantidad):
             faltan.append(ingrediente.titulo)
     return faltan
 
+def max_pizzas(pizza):
+    # cuántas pizzas se pueden hacer como máximo con el stock actual:
+    # lo marca el ingrediente del que menos queda
+    maximo = None
+    for ingrediente in pizza.ingredientes.all():
+        if maximo is None or ingrediente.stock < maximo:
+            maximo = ingrediente.stock
+    return maximo
+
 def filtrarpizza(request, idPizza):
     # detalle de una pizza --> /pizza/<idPizza>
     # busca la pizza por su id; si no existe, lanza Http404 automáticamente
@@ -49,7 +58,11 @@ def filtrarpizza(request, idPizza):
             faltan = ingredientes_sin_stock(pizza, cantidad)
             if faltan:
                 # no llega para esa cantidad: error general del formulario y no se compra nada
-                form.add_error(None, 'No hay stock suficiente de: ' + ', '.join(faltan) + '.')
+                maximo = max_pizzas(pizza)
+                if maximo == 1:
+                    form.add_error(None, 'Solo hay stock para 1 pizza.')
+                else:
+                    form.add_error(None, f'Solo hay stock para {maximo} pizzas.')
             else:
                 # hay de todo: restamos de cada ingrediente una unidad por cada pizza comprada
                 for ingrediente in ingredientes:
@@ -69,6 +82,11 @@ def filtrarpizza(request, idPizza):
     else:
         # GET: formulario vacío ("unbound"), con la cantidad a 1
         form = CompraPizzaForm()
+
+    # el campo de cantidad no deja pasar de las pizzas que se pueden hacer (atributo max del input)
+    maximo = max_pizzas(pizza)
+    if maximo:
+        form.fields['cantidad'].widget.attrs['max'] = maximo
 
     contexto = {
         'pizza': pizza,

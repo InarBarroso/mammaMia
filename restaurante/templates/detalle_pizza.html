@@ -27,7 +27,7 @@
                 {# falta algún ingrediente: no se puede comprar #}
                 <p class="agotada">Agotada. No queda stock de: {{ sin_stock|join:", " }}.</p>
             {% else %}
-                <form method="post" action="{% url 'filtrarpizza' pizza.id %}" id="form_compra">
+                <form method="post" action="{% url 'filtrarpizza' pizza.id %}" id="form_compra" novalidate>
                     {% csrf_token %}
                     {{ form.non_field_errors }}
                     {{ form.cantidad.errors }}
