@@ -131,13 +131,13 @@ def login_view(request):
     if request.method == 'POST':
         # formulario "bound": le asociamos los datos que ha enviado el usuario
         form = LoginForm(request.POST)
-        # validamos los datos (campos obligatorios, formato de email...)
+        # validamos los datos (campos obligatorios...)
         if form.is_valid():
             # los datos ya validados quedan en form.cleaned_data
-            email = form.cleaned_data['email']
+            nombre_usuario = form.cleaned_data['usuario']
             password = form.cleaned_data['password']
 
-            usuario = User.objects.filter(email=email, password=password).first()
+            usuario = User.objects.filter(usuario=nombre_usuario, password=password).first()
             if usuario:
                 # guardamos en la sesión quién ha iniciado sesión
                 request.session['usuario_id'] = usuario.id
@@ -145,8 +145,8 @@ def login_view(request):
                 # redireccionamos a otra URL (igual que HttpResponseRedirect('/'))
                 return redirect('panel_admin')
 
-            # el email o la contraseña no coinciden: error general del formulario (non_field_errors)
-            form.add_error(None, 'El email o la contraseña no son correctos.')
+            # el usuario o la contraseña no coinciden: error general del formulario (non_field_errors)
+            form.add_error(None, 'El usuario o la contraseña no son correctos.')
     else:
         # si es GET (primera vez que se entra) creamos un formulario vacío, "unbound"
         form = LoginForm()

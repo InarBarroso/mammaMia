@@ -43,7 +43,7 @@ class Pizza(models.Model):
 
 class User(models.Model):
     nombre = models.CharField(max_length=100)
-    email = models.EmailField(unique=True)
+    usuario = models.CharField(max_length=150, unique=True)
     password = models.CharField(max_length=100)
 
     def __str__(self):

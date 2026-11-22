@@ -3,13 +3,12 @@ from .models import Pizza, TipoMasa, Ingrediente, User
 
 
 class LoginForm(forms.Form):
-    email = forms.EmailField(
-        label='Email',
-        max_length=254,
-        widget=forms.EmailInput(attrs={'autocomplete': 'email'}),
+    usuario = forms.CharField(
+        label='Usuario',
+        max_length=150,
+        widget=forms.TextInput(attrs={'autocomplete': 'username'}),
         error_messages={
-            'required': 'Introduce tu email.',
-            'invalid': 'Introduce un email válido.',
+            'required': 'Introduce tu usuario.',
         },
     )
 
