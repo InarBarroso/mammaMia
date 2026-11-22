@@ -1,9 +1,11 @@
 from django.urls import path
 from .views import home, filtrarpizza, allpizzas, allmasas, filtrarmasa, addpizza, login_view, panel_admin, logout_view, eliminar_pizza
+from .views import stock_ingredientes
 
 urlpatterns = [
     path('', home, name='home'),
     # detalle de una pizza, p.ej. /pizza/3  (cover.html enlaza con {% url 'filtrarpizza' pizza.id %})
+    # el formulario de "Comprar" del detalle también envía aquí sus datos (POST)
     path('pizza/<int:idPizza>', filtrarpizza, name='filtrarpizza'),
     path('all_pizza', allpizzas, name='all_pizza'),
     path('all_masas', allmasas, name='all_masas'),
@@ -11,6 +13,8 @@ urlpatterns = [
     path('addpizza', addpizza, name='addPizza'),
     path('login', login_view, name='login'),
     path('panel', panel_admin, name='panel_admin'),
+    # panel: stock de ingredientes y registro de compras
+    path('stock', stock_ingredientes, name='stock'),
     path('logout', logout_view, name='logout'),
     path('eliminarpizza', eliminar_pizza, name='eliminarPizza'),
 ]

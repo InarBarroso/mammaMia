@@ -1,0 +1,80 @@
+/* página de stock de ingredientes (panel de administración) */
+
+/* mensaje después de registrar compras */
+#panel .mensaje {
+    margin: 0 0 2rem;
+    padding: 14px 18px;
+    background-color: #E3EDE6;
+    border-left: 5px solid #1A2826;
+    border-radius: 6px;
+    color: #1A2826;
+    font-weight: 600;
+}
+
+/* la tabla de stock y las últimas compras, una al lado de la otra (en móvil, una debajo de otra) */
+.stock_bloques {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+#form_stock {
+    flex: 2 1 420px;
+}
+
+#ultimas_compras {
+    flex: 1 1 300px;
+}
+
+#ultimas_compras h2 {
+    margin-top: 0;
+    color: #1A2826;
+}
+
+.tabla_stock {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #F8F7F4;
+}
+
+.tabla_stock th,
+.tabla_stock td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #D1D5DB;
+}
+
+.tabla_stock th {
+    background-color: #1A2826;
+    color: #FFFFFF;
+}
+
+/* ingredientes que se han acabado */
+.sin_stock {
+    color: #B82E2E;
+    font-weight: 700;
+}
+
+.tabla_stock input {
+    width: 80px;
+    padding: 6px 8px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+}
+
+.boton_stock {
+    margin-top: 1.5rem;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: #B82E2E;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.boton_stock:hover {
+    background-color: #962323;
+}

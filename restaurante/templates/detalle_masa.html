@@ -18,7 +18,7 @@
         <article>
             <h1>Masa {{ masa.titulo }}</h1>
             <p>{{ masa.descripcion }}</p>
-            <p>Pizzas con esta masa: {{ pizzas|length }}</p>
+            <p>Pizzas disponibles con esta masa: {{ pizzas|length }}</p>
         </article>
 
     </div>
@@ -47,7 +47,7 @@
 
         </div>
         {% else %}
-            <p class="sin_pizzas">Todavía no hay pizzas con esta masa.</p>
+            <p class="sin_pizzas">Ahora mismo no hay pizzas disponibles con esta masa.</p>
         {% endif %}
     </div>
 {% endblock %}

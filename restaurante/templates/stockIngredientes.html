@@ -1,0 +1,65 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block title %}Stock de ingredientes - Mamma Mia{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/panel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stock.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section id="panel">
+        <h1>Stock de ingredientes</h1>
+        <p>Escribe cuántas unidades has comprado de cada ingrediente y pulsa «Registrar compra».</p>
+
+        {% if mensaje %}
+            <p class="mensaje">{{ mensaje }}</p>
+        {% endif %}
+
+        <div class="stock_bloques">
+
+            <form method="post" action="{% url 'stock' %}" id="form_stock">
+                {% csrf_token %}
+                <table class="tabla_stock">
+                    <tr>
+                        <th>Ingrediente</th>
+                        <th>Stock</th>
+                        <th>Comprado</th>
+                    </tr>
+                    {% for ingrediente in ingredientes %}
+                    <tr>
+                        <td>{{ ingrediente.titulo }}</td>
+                        <td{% if ingrediente.stock == 0 %} class="sin_stock"{% endif %}>{{ ingrediente.stock }}</td>
+                        <td><input type="number" name="cantidad_{{ ingrediente.id }}" min="0" placeholder="0"></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <input type="submit" value="Registrar compra" class="boton_stock">
+            </form>
+
+            <div id="ultimas_compras">
+                <h2>Últimas compras</h2>
+                {% if compras %}
+                <table class="tabla_stock">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Ingrediente</th>
+                        <th>Uds.</th>
+                    </tr>
+                    {% for compra in compras %}
+                    <tr>
+                        <td>{{ compra.fecha|date:"d/m/Y H:i" }}</td>
+                        <td>{{ compra.ingrediente.titulo }}</td>
+                        <td>{{ compra.cantidad }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                <p>Todavía no se ha registrado ninguna compra.</p>
+                {% endif %}
+            </div>
+
+        </div>
+    </section>
+{% endblock %}

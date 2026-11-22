@@ -35,3 +35,17 @@ class addPizzaForm(forms.ModelForm):
             'tipo': forms.Select(attrs={'id': 'tipoMasa'}),
             'ingredientes': forms.CheckboxSelectMultiple(),
         }
+
+
+class CompraPizzaForm(forms.Form):
+    # formulario para comprar una pizza desde su detalle: solo pide cuántas se quieren
+    cantidad = forms.IntegerField(
+        label='Cantidad',
+        min_value=1,  # no se puede comprar 0 ni un número negativo
+        initial=1,    # al entrar en la página el campo sale con un 1
+        error_messages={
+            'required': 'Indica cuántas pizzas quieres.',
+            'invalid': 'Introduce un número entero.',
+            'min_value': 'Como mínimo tienes que comprar 1 pizza.',
+        },
+    )

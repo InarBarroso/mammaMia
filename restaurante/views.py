@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from .models import Pizza, TipoMasa, Ingrediente, User
 from .forms import LoginForm
 from .forms import addPizzaForm
+from .models import CompraIngrediente
+from .forms import CompraPizzaForm
 
 # Create your views here.
 
@@ -15,6 +17,16 @@ def home(request):
     }
     return render(request, "cover.html", context)
 
+def ingredientes_sin_stock(pizza, cantidad):
+    # cada pizza gasta 1 unidad de cada uno de sus ingredientes, así que para hacer
+    # 'cantidad' pizzas hacen falta 'cantidad' unidades de cada ingrediente.
+    # Devuelve los nombres de los ingredientes de los que no hay suficiente (lista vacía = hay de todo)
+    faltan = []
+    for ingrediente in pizza.ingredientes.all():
+        if ingrediente.stock < cantidad:
+            faltan.append(ingrediente.titulo)
+    return faltan
+
 def filtrarpizza(request, idPizza):
     # detalle de una pizza --> /pizza/<idPizza>
     # busca la pizza por su id; si no existe, lanza Http404 automáticamente
@@ -22,9 +34,45 @@ def filtrarpizza(request, idPizza):
 
     ingredientes = pizza.ingredientes.all()
 
+    if request.method == 'POST':
+        # el cliente ha pulsado "Comprar": formulario "bound" con la cantidad que ha escrito
+        form = CompraPizzaForm(request.POST)
+        if form.is_valid():
+            cantidad = form.cleaned_data['cantidad']
+
+            # antes de restar nada comprobamos que hay stock de todos los ingredientes
+            faltan = ingredientes_sin_stock(pizza, cantidad)
+            if faltan:
+                # no llega para esa cantidad: error general del formulario y no se compra nada
+                form.add_error(None, 'No hay stock suficiente de: ' + ', '.join(faltan) + '.')
+            else:
+                # hay de todo: restamos de cada ingrediente una unidad por cada pizza comprada
+                for ingrediente in ingredientes:
+                    ingrediente.stock = ingrediente.stock - cantidad
+                    ingrediente.save()
+
+                # sumamos las pizzas vendidas (con esto se ordena "Las más vendidas" de la portada)
+                pizza.num_ventas = pizza.num_ventas + cantidad
+                pizza.save()
+
+                # guardamos el mensaje en la sesión para enseñarlo después de redireccionar
+                total = pizza.precio * cantidad
+                request.session['mensaje_compra'] = f'¡Compra realizada! {cantidad} x {pizza.titulo}. Total: {total} €'
+
+                # redireccionamos a la misma página (GET) para que al recargar no se compre otra vez
+                return redirect('filtrarpizza', idPizza=pizza.id)
+    else:
+        # GET: formulario vacío ("unbound"), con la cantidad a 1
+        form = CompraPizzaForm()
+
     contexto = {
         'pizza': pizza,
         'ingredientes': ingredientes,
+        'form': form,
+        # si falta algún ingrediente no se puede hacer ni una pizza: está agotada
+        'sin_stock': ingredientes_sin_stock(pizza, 1),
+        # pop saca el mensaje de la sesión y lo borra, así solo se ve una vez
+        'mensaje': request.session.pop('mensaje_compra', None),
     }
     return render(request, 'detalle_pizza.html', contexto)
 
@@ -56,8 +104,12 @@ def allmasas(request):
 
 def filtrarmasa(request, idMasa):
     masa = get_object_or_404(TipoMasa, pk=idMasa)
-    # pizzas que tienen esta masa
-    pizzas = Pizza.objects.filter(tipo=masa)
+    # pizzas que tienen esta masa, pero solo las que se pueden hacer:
+    # si a una pizza le falta stock de algún ingrediente, no se muestra
+    pizzas = []
+    for pizza in Pizza.objects.filter(tipo=masa):
+        if not ingredientes_sin_stock(pizza, 1):
+            pizzas.append(pizza)
     context = {
         'masa': masa,
         'pizzas': pizzas
@@ -98,6 +150,47 @@ def panel_admin(request):
         'nombre': request.session.get('usuario_nombre'),
     }
     return render(request, "panelAdmin.html", context)
+
+def stock_ingredientes(request):
+    # página del panel para ver el stock y registrar las compras de ingredientes
+    # igual que el panel: si no ha iniciado sesión, lo mandamos al login
+    if 'usuario_id' not in request.session:
+        return redirect('login')
+
+    ingredientes = Ingrediente.objects.all()  # salen en orden alfabético (ordering del modelo)
+
+    if request.method == 'POST':
+        num_compras = 0
+        # en la tabla, la casilla de cada ingrediente se llama "cantidad_<id del ingrediente>"
+        for ingrediente in ingredientes:
+            valor = request.POST.get('cantidad_' + str(ingrediente.id), '')
+            # solo cuentan los números enteros mayores que 0 (las casillas vacías se ignoran)
+            if valor.isdecimal() and int(valor) > 0:
+                cantidad = int(valor)
+
+                # 1) registramos la compra en la tabla CompraIngrediente (la fecha se pone sola)
+                compra = CompraIngrediente(ingrediente=ingrediente, cantidad=cantidad)
+                compra.save()
+
+                # 2) sumamos lo comprado al stock del ingrediente
+                ingrediente.stock = ingrediente.stock + cantidad
+                ingrediente.save()
+
+                num_compras = num_compras + 1
+
+        if num_compras > 0:
+            request.session['mensaje_stock'] = f'Compras registradas: {num_compras}.'
+        else:
+            request.session['mensaje_stock'] = 'No has escrito ninguna cantidad.'
+        # redireccionamos (GET) para que al recargar no se registren las compras otra vez
+        return redirect('stock')
+
+    context = {
+        'ingredientes': ingredientes,
+        'compras': CompraIngrediente.objects.order_by('-fecha')[:10],  # las 10 últimas compras
+        'mensaje': request.session.pop('mensaje_stock', None),
+    }
+    return render(request, 'stockIngredientes.html', context)
 
 def eliminar_pizza(request):
     if 'usuario_id' not in request.session:
