@@ -42,6 +42,8 @@
                         <a href="{% url 'filtrarpizza' pizza.id %}" class="boton">Detalles</a>
                         </div>
                     </section>
+                    {% empty %}
+                    <p class="sin_pizzas">Ahora mismo no hay pizzas disponibles.</p>
                     {%endfor%}
                     
                 </div>

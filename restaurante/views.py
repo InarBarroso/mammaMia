@@ -11,7 +11,12 @@ from .forms import CompraPizzaForm
 
 
 def home(request):
-    pizzas = Pizza.objects.order_by('-num_ventas')[:3]
+    # las 3 más vendidas de entre las que se pueden hacer (con stock de todos sus ingredientes)
+    pizzas = []
+    for pizza in Pizza.objects.order_by('-num_ventas'):
+        if not ingredientes_sin_stock(pizza, 1):
+            pizzas.append(pizza)
+    pizzas = pizzas[:3]
     context = {
         'pizzas' : pizzas
     }
@@ -88,8 +93,14 @@ def allpizzas(request):
     for id_ingrediente in seleccionados:
         pizzas = pizzas.filter(ingredientes__id=id_ingrediente)
 
+    # solo se muestran las pizzas que se pueden hacer (con stock de todos sus ingredientes)
+    disponibles = []
+    for pizza in pizzas:
+        if not ingredientes_sin_stock(pizza, 1):
+            disponibles.append(pizza)
+
     context = {
-        'pizzas': pizzas,
+        'pizzas': disponibles,
         'ingredientes': Ingrediente.objects.all(), #para pintar los checkbox
         'seleccionados': seleccionados, #para dejar marcados los que se han elegido
     }
